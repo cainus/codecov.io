@@ -17,7 +17,7 @@
     "codecov"
   ],
   "bin": {
-    "coveralls": "./bin/coveralls.js"
+    "coveralls": "./bin/codecov.io.js"
   },
   "author": "Gregg Caines <gregg@caines.ca>",
   "license": "MIT",
