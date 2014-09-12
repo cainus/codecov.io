@@ -4,7 +4,7 @@
   "description": "lcov posting to codecov.io",
   "main": "index.js",
   "scripts": {
-    "test": "make test"
+    "test": "make test-codecov.io"
   },
   "repository": {
     "type": "git",
