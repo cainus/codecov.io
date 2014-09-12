@@ -34,7 +34,7 @@ This library currently supports [travis-ci](https://travis-ci.org/) with no extr
 **With Mocha:**
 
 ```sh
-istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage
+istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/codecov.io/bin/codecov.io.js && rm -rf ./coverage
 ```
 
 **With Jasmine:**
