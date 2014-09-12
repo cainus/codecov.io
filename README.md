@@ -1,6 +1,6 @@
 #codecov.io
 
-## This library is not currently usable, but should be shortly
+## This library is not currently usable, but should be shortly 
 
 [![Build Status][travis-image]][travis-url]
 
