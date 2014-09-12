@@ -26,7 +26,8 @@
   },
   "homepage": "https://github.com/cainus/codecov.io",
   "dependencies": {
-    "request": "2.42.0"
+    "request": "2.42.0",
+    "urlgrey": "^0.4.0"
   },
   "devDependencies": {
     "istanbul": "0.3.2",
