@@ -1,7 +1,5 @@
 #codecov.io
 
-## This library is not currently usable, but should be shortly 
-
 [![Build Status][travis-image]][travis-url]
 [![codecov.io](https://codecov.io/github/cainus/codecov.io/coverage.svg?branch=master)](https://codecov.io/github/cainus/codecov.io?branch=master)
 
