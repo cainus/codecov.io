@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-var handleInput = require('../lib/handleInput');
+var sendToCodeCov = require('../lib/sendToCodeCov');
 
 process.stdin.resume();
 process.stdin.setEncoding('utf8');
@@ -11,7 +11,7 @@ process.stdin.on('data', function(chunk) {
 });
 
 process.stdin.on('end', function() {
-    handleInput(input, function(err) {
+    sendToCodeCov(input, function(err) {
       if (err) {
         throw err;
       }

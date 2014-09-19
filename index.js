@@ -1,4 +1,4 @@
 
-var handleInput = require('./lib/handleInput');
+var handleInput = require('./lib/sendToCodeCov.io');
 
 exports.handleInput = handleInput;
