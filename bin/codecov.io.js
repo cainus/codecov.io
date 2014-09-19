@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-var sendToCodeCov = require('../lib/sendToCodeCov');
+var sendToCodeCov = require('../lib/sendToCodeCov.io');
 
 process.stdin.resume();
 process.stdin.setEncoding('utf8');
