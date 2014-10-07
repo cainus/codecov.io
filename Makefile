@@ -1,7 +1,7 @@
 REPORTER = spec
 test:
 	@$(MAKE) lint
-	@NODE_ENV=test ./node_modules/.bin/mocha -b --reporter $(REPORTER)
+	@NODE_ENV=test ./node_modules/.bin/mocha -b --reporter $(REPORTER) --recursive
 
 lint:
 	./node_modules/.bin/jshint ./lib ./test ./index.js

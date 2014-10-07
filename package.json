@@ -1,6 +1,6 @@
 {
   "name": "codecov.io",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "lcov posting to codecov.io",
   "main": "index.js",
   "scripts": {
@@ -30,10 +30,10 @@
     "urlgrey": "0.4.0"
   },
   "devDependencies": {
+    "expect.js": "0.3.1",
     "istanbul": "0.3.2",
     "jshint": "2.5.5",
     "mocha": "1.21.4",
-    "mocha-lcov-reporter": "0.0.1",
-    "should": "4.0.4"
+    "mocha-lcov-reporter": "0.0.1"
   }
 }
