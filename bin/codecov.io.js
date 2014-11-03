@@ -13,7 +13,7 @@ process.stdin.on('data', function(chunk) {
 process.stdin.on('end', function() {
     sendToCodeCov(input, function(err) {
       if (err) {
-        console.log("error sending to codecov.io: ", err, err, stack);
+        console.log("error sending to codecov.io: ", err, err.stack);
         if (/non-success response/.test(err.message)){
           console.log("detail: ", err.detail);
         }
