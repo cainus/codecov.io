@@ -10,6 +10,7 @@ describe("getConfiguration", function(){
     process.env.TRAVIS_BRANCH = 'master';
     process.env.CODECOV_TOKEN = 'asdf-asdf-asdf-asdf';
     expect(getConfiguration()).to.eql({
+      service : 'travis',
       buildId :  '1234',
       commitId : '5678',
       build : '91011',
@@ -25,6 +26,7 @@ describe("getConfiguration", function(){
     process.env.TRAVIS_BRANCH = 'master';
     process.env.codecov_token = 'asdf-asdf-asdf-asdf';
     expect(getConfiguration()).to.eql({
+      service : 'travis',
       buildId :  '1234',
       commitId : '5678',
       build : '91011',

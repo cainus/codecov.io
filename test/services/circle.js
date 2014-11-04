@@ -13,6 +13,7 @@ describe("circle service", function(){
     process.env.CIRCLE_SHA1 = '5678';
     process.env.CIRCLE_BRANCH = 'master';
     expect(travis.configuration()).to.eql({
+      service : 'circle',
       buildId :  '1234',
       commitId : '5678',
       build : '1234',
@@ -26,6 +27,7 @@ describe("circle service", function(){
     process.env.CIRCLE_BRANCH = 'master';
     process.env.CIRCLE_PULL_REQUEST = 'blah';
     expect(travis.configuration()).to.eql({
+      service : 'circle',
       buildId :  '1234',
       commitId : '5678',
       build : '1234',
