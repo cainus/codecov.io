@@ -27,7 +27,8 @@
   "homepage": "https://github.com/cainus/codecov.io",
   "dependencies": {
     "request": "2.42.0",
-    "urlgrey": "0.4.0"
+    "urlgrey": "0.4.0",
+    "execSync": "1.0.2"
   },
   "devDependencies": {
     "expect.js": "0.3.1",
