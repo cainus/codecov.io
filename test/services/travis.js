@@ -13,6 +13,9 @@ describe("travis service", function(){
     process.env.TRAVIS_COMMIT = '5678';
     process.env.TRAVIS_JOB_NUMBER = '91011';
     process.env.TRAVIS_BRANCH = 'master';
+    if (process.env.TRAVIS_PULL_REQUEST) {
+      process.env.TRAVIS_PULL_REQUEST = 'false';
+    }
     expect(travis.configuration()).to.eql({
       service : 'travis',
       buildId :  '1234',

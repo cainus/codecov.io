@@ -9,6 +9,9 @@ describe("getConfiguration", function(){
     process.env.TRAVIS_JOB_NUMBER = '91011';
     process.env.TRAVIS_BRANCH = 'master';
     process.env.CODECOV_TOKEN = 'asdf-asdf-asdf-asdf';
+    if (process.env.TRAVIS_PULL_REQUEST) {
+      process.env.TRAVIS_PULL_REQUEST = 'false';
+    }
     expect(getConfiguration()).to.eql({
       service : 'travis',
       buildId :  '1234',
@@ -25,6 +28,9 @@ describe("getConfiguration", function(){
     process.env.TRAVIS_JOB_NUMBER = '91011';
     process.env.TRAVIS_BRANCH = 'master';
     process.env.codecov_token = 'asdf-asdf-asdf-asdf';
+    if (process.env.TRAVIS_PULL_REQUEST) {
+      process.env.TRAVIS_PULL_REQUEST = 'false';
+    }
     expect(getConfiguration()).to.eql({
       service : 'travis',
       buildId :  '1234',
