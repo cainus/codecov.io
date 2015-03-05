@@ -11,12 +11,15 @@ describe("appveyor service", function(){
     process.env.APPVEYOR_BUILD_NUMBER = "1234";
     process.env.APPVEYOR_REPO_COMMIT = "5678";
     process.env.APPVEYOR_REPO_BRANCH = "master";
+    process.env.APPVEYOR_REPO_NAME = 'owner/repo';
     expect(appveyor.configuration()).to.eql({
       service : 'appveyor',
-      buildId :  '1234',
-      commitId : '5678',
+      build :  '1234',
+      commit : '5678',
       build : '1234',
-      branch : 'master'
+      branch : 'master',
+      owner : 'owner',
+      repo : 'repo'
     });
   });
 

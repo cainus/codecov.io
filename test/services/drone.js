@@ -11,12 +11,13 @@ describe("drone service", function(){
     process.env.DRONE_BUILD_NUMBER = "1234";
     process.env.DRONE_COMMIT = "5678";
     process.env.DRONE_BRANCH = "master";
+    process.env.DRONE_BUILD_URL = 'https://...';
     expect(drone.configuration()).to.eql({
       service : 'drone',
-      buildId :  '1234',
-      commitId : '5678',
+      commit : '5678',
       build : '1234',
-      branch : 'master'
+      branch : 'master',
+      build_url : 'https://...'
     });
   });
 

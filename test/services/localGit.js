@@ -2,8 +2,8 @@ var local = require("../../lib/services/localGit");
 
 describe("localGit service", function(){
 
-  it ("can get commitId", function(){
-    expect(local.configuration().commitId).to.match(/^\w{40}$/);
+  it ("can get commit", function(){
+    expect(local.configuration().commit).to.match(/^\w{40}$/);
   });
 
   it ("can get branch", function(){

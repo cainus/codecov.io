@@ -11,12 +11,14 @@ describe("semaphore service", function(){
     process.env.SEMAPHORE_BUILD_NUMBER = "1234";
     process.env.REVISION = "5678";
     process.env.BRANCH_NAME = "master";
+    process.env.SEMAPHORE_REPO_SLUG = "owner/repo";
     expect(semaphore.configuration()).to.eql({
       service : 'semaphore',
-      buildId :  '1234',
-      commitId : '5678',
+      commit : '5678',
       build : '1234',
-      branch : 'master'
+      branch : 'master',
+      owner : 'owner',
+      repo : 'repo'
     });
   });
 
