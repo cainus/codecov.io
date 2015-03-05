@@ -1,10 +1,10 @@
-var travis = require("../../lib/services/circle");
+var circle = require("../../lib/services/circle");
 
 describe("circle service", function(){
 
   it ("can detect circle", function(){
     process.env.CIRCLECI = "true";
-    expect(travis.detect()).to.be(true);
+    expect(circle.detect()).to.be(true);
   });
 
   it ("can get circle env info", function(){
@@ -12,7 +12,7 @@ describe("circle service", function(){
     process.env.CIRCLE_BUILD_NUM = '1234';
     process.env.CIRCLE_SHA1 = '5678';
     process.env.CIRCLE_BRANCH = 'master';
-    expect(travis.configuration()).to.eql({
+    expect(circle.configuration()).to.eql({
       service : 'circle',
       buildId :  '1234',
       commitId : '5678',
@@ -26,7 +26,7 @@ describe("circle service", function(){
     process.env.CIRCLE_SHA1 = '5678';
     process.env.CIRCLE_BRANCH = 'master';
     process.env.CIRCLE_PULL_REQUEST = 'blah';
-    expect(travis.configuration()).to.eql({
+    expect(circle.configuration()).to.eql({
       service : 'circle',
       buildId :  '1234',
       commitId : '5678',
