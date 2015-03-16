@@ -13,14 +13,9 @@ Add the latest version of `codecov.io` to your package.json:
 npm install codecov.io --save
 ```
 
-If you're using mocha, add `mocha-lcov-reporter` to your package.json:
-```
-npm install mocha-lcov-reporter --save
-```
-
 ##Usage:
 
-This script ( `bin/codecov.io.js` ) can take standard input from any tool that emits the lcov data format (including [mocha](http://visionmedia.github.com/mocha/)'s [LCov reporter](https://npmjs.org/package/mocha-lcov-reporter)) and send it to codecov.io to report your code coverage there.
+This script ( `bin/codecov.io.js` ) can take standard input from any tool that emits the lcov, gcov or standardized json data format (including [mocha](http://visionmedia.github.com/mocha/)'s [LCov reporter](https://npmjs.org/package/mocha-lcov-reporter)) and send it to codecov.io to report your code coverage there.
 
 Once your app is instrumented for coverage, and building, you need to pipe the lcov output to `./node_modules/codecov.io/bin/codecov.io.js`.
 
@@ -32,13 +27,13 @@ This library currently supports [travis-ci](https://travis-ci.org/) with no extr
 **With Mocha:**
 
 ```sh
-istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/codecov.io/bin/codecov.io.js && rm -rf ./coverage
+istanbul cover ./node_modules/mocha/bin/_mocha -- -R spec && cat ./coverage/coverage.json | ./node_modules/codecov.io/bin/codecov.io.js
 ```
 
 **With Jasmine:**
 
 ```sh
-istanbul cover jasmine-node --captureExceptions spec/ && cat ./coverage/lcov.info | ./node_modules/codecov.io/bin/codecov.io.js && rm -rf ./coverage
+istanbul cover jasmine-node --captureExceptions spec/ && cat ./coverage/coverage.json | ./node_modules/codecov.io/bin/codecov.io.js
 ```
 
 [travis-image]: https://travis-ci.org/cainus/codecov.io.svg?branch=master
