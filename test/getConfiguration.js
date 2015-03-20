@@ -14,7 +14,7 @@ describe("getConfiguration", function(){
       process.env.TRAVIS_PULL_REQUEST = 'false';
     }
     expect(getConfiguration()).to.eql({
-      service : 'travis',
+      service : 'travis-org',
       commit : '5678',
       build : '91011',
       branch : 'master',
@@ -36,7 +36,7 @@ describe("getConfiguration", function(){
       process.env.TRAVIS_PULL_REQUEST = 'false';
     }
     expect(getConfiguration()).to.eql({
-      service : 'travis',
+      service : 'travis-org',
       commit : '5678',
       build : '91011',
       travis_job_id : '1234',
