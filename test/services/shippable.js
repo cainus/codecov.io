@@ -3,7 +3,7 @@ var shippable = require("../../lib/services/shippable");
 describe("shippable service", function(){
 
   it ("can detect shippable", function(){
-    process.env.shippable = "true";
+    process.env.SHIPPABLE = "true";
     expect(shippable.detect()).to.be(true);
   });
 
