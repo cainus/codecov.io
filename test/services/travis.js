@@ -18,7 +18,7 @@ describe("travis service", function(){
       process.env.TRAVIS_PULL_REQUEST = 'false';
     }
     expect(travis.configuration()).to.eql({
-      service : 'travis',
+      service : 'travis-org',
       commit : '5678',
       build : '91011',
       branch : 'master',
@@ -36,7 +36,7 @@ describe("travis service", function(){
     process.env.TRAVIS_PULL_REQUEST = 'blah';
     process.env.TRAVIS_REPO_SLUG = 'owner/repo';
     expect(travis.configuration()).to.eql({
-      service : 'travis',
+      service : 'travis-org',
       commit : '5678',
       build : '91011',
       branch : 'master',
