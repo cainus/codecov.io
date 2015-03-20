@@ -10,7 +10,7 @@ describe("shippable service", function(){
   it ("can get shippable env info", function(){
     process.env.SHIPPABLE = "true";
     process.env.COMMIT = '5678';
-    process.env.BUILD = '91011';
+    process.env.BUILD_NUMBER = '91011';
     process.env.BUILD_URL = 'http://...';
     process.env.BRANCH = 'master';
     process.env.REPO_NAME = 'owner/repo';
@@ -31,7 +31,7 @@ describe("shippable service", function(){
     process.env.SHIPPABLE = "true";
     process.env.BUILD_URL = 'http://...';
     process.env.COMMIT = '5678';
-    process.env.BUILD = '91011';
+    process.env.BUILD_NUMBER = '91011';
     process.env.BUILD_URL = 'http://...';
     process.env.BRANCH = 'master';
     process.env.PULL_REQUEST = '2';
@@ -42,7 +42,6 @@ describe("shippable service", function(){
       build : '91011',
       build_url : 'http://...',
       branch : 'master',
-      job_id : '1234',
       pull_request : '2',
       owner : 'owner',
       repo : 'repo'
