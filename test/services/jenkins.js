@@ -15,9 +15,9 @@ describe("jenkins service", function(){
     process.env.WORKSPACE = '/var/lib/jenkins/workspace';
     expect(jenkins.configuration()).to.eql({
       service : 'jenkins',
-      buildId :  '1234',
-      buildUrl :  'http://asdf/',
-      commitId : '5678',
+      build_url : 'http://asdf/',
+      build : '1234',
+      commit : '5678',
       root : '/var/lib/jenkins/workspace',
       branch : 'master'
     });

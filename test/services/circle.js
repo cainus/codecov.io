@@ -1,10 +1,10 @@
-var travis = require("../../lib/services/circle");
+var circle = require("../../lib/services/circle");
 
 describe("circle service", function(){
 
   it ("can detect circle", function(){
     process.env.CIRCLECI = "true";
-    expect(travis.detect()).to.be(true);
+    expect(circle.detect()).to.be(true);
   });
 
   it ("can get circle env info", function(){
@@ -12,12 +12,15 @@ describe("circle service", function(){
     process.env.CIRCLE_BUILD_NUM = '1234';
     process.env.CIRCLE_SHA1 = '5678';
     process.env.CIRCLE_BRANCH = 'master';
-    expect(travis.configuration()).to.eql({
+    process.env.CIRCLE_PROJECT_USERNAME = 'owner';
+    process.env.CIRCLE_PROJECT_REPONAME = 'repo';
+    expect(circle.configuration()).to.eql({
       service : 'circle',
-      buildId :  '1234',
-      commitId : '5678',
-      build : '1234',
-      branch : 'master'
+      build :  '1234',
+      commit : '5678',
+      branch : 'master',
+      owner : 'owner',
+      repo : 'repo'
     });
   });
   it ("can get circle env info with a pull request", function(){
@@ -26,13 +29,16 @@ describe("circle service", function(){
     process.env.CIRCLE_SHA1 = '5678';
     process.env.CIRCLE_BRANCH = 'master';
     process.env.CIRCLE_PULL_REQUEST = 'blah';
-    expect(travis.configuration()).to.eql({
+    process.env.CIRCLE_PROJECT_USERNAME = 'owner';
+    process.env.CIRCLE_PROJECT_REPONAME = 'repo';
+    expect(circle.configuration()).to.eql({
       service : 'circle',
-      buildId :  '1234',
-      commitId : '5678',
+      commit : '5678',
       build : '1234',
       branch : 'master',
-      pullRequest : 'blah',
+      pull_request : 'blah',
+      owner : 'owner',
+      repo : 'repo'
     });
   });
 
