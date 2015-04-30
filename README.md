@@ -14,7 +14,7 @@ npm install codecov.io --save
 
 This script ( `bin/codecov.io.js` ) can take standard input from any tool that emits the lcov, gcov or standardized json data format and send it to codecov.io to report your code coverage there.
 
-Once your app is instrumented for coverage, and building, you need to pipe the lcov output to `./node_modules/codecov.io/bin/codecov.io.js`.
+Once your app is instrumented for coverage, and building, you need to pipe the coverage reports output to `./node_modules/codecov.io/bin/codecov.io.js`.
 
 This library currently supports the following CI companies: [Travis CI](https://travis-ci.org/), [Appveyor](https://appveyor.com/), [CircleCI](https://circleci.com/), [Codeship](https://codeship.io/), [Drone](https://drone.io/), [Jenkins](http://jenkins-ci.org/), [Shippable](https://shippable.com/), [Semaphore](https://semaphoreapp.com/), [Wercker](https://wercker.com/)
 
