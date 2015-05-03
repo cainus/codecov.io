@@ -24,13 +24,19 @@ This library currently supports the following CI companies: [Travis CI](https://
 **With Mocha:**
 
 ```sh
-istanbul cover ./node_modules/mocha/bin/_mocha -- -R spec && cat ./coverage/coverage.json | ./node_modules/codecov.io/bin/codecov.io.js
+istanbul cover ./node_modules/mocha/bin/_mocha -- -R spec && cat ./coverage/coverage.json | ./node_modules/.bin/codecov
 ```
 
 **With Jasmine:**
 
 ```sh
-istanbul cover jasmine-node --captureExceptions spec/ && cat ./coverage/coverage.json | ./node_modules/codecov.io/bin/codecov.io.js
+istanbul cover jasmine-node --captureExceptions spec/ && cat ./coverage/coverage.json | ./node_modules/.bin/codecov
+```
+
+**With Tape:**
+
+```sh
+istanbul cover test.js && cat ./coverage/coverage.json | ./node_modules/.bin/codecov
 ```
 
 [travis-image]: https://travis-ci.org/cainus/codecov.io.svg?branch=master
