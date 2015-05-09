@@ -15,6 +15,7 @@ describe("getConfiguration", function(){
     }
     expect(getConfiguration()).to.eql({
       service : 'travis-org',
+      package : 'node',
       commit : '5678',
       build : '91011',
       branch : 'master',
@@ -37,6 +38,7 @@ describe("getConfiguration", function(){
     }
     expect(getConfiguration()).to.eql({
       service : 'travis-org',
+      package : 'node',
       commit : '5678',
       build : '91011',
       travis_job_id : '1234',
