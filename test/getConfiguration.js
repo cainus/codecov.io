@@ -9,7 +9,7 @@ describe("getConfiguration", function(){
     process.env.TRAVIS_JOB_NUMBER = '91011';
     process.env.TRAVIS_BRANCH = 'master';
     process.env.TRAVIS_REPO_SLUG = 'owner/repo';
-    process.env.CODECOV_TOKEN = 'asdf-asdf-asdf-asdf';
+    process.env.CODECOV_TOKEN = 'ASDF-ASDF-ASDF-ASDF';
     if (process.env.TRAVIS_PULL_REQUEST) {
       process.env.TRAVIS_PULL_REQUEST = 'false';
     }
