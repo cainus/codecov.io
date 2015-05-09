@@ -7,6 +7,7 @@ describe("getConfiguration", function(){
     process.env.TRAVIS_JOB_ID = '1234';
     process.env.TRAVIS_COMMIT = '5678';
     process.env.TRAVIS_JOB_NUMBER = '91011';
+    process.env.TRAVIS_PULL_REQUEST = 'false';
     process.env.TRAVIS_BRANCH = 'master';
     process.env.TRAVIS_REPO_SLUG = 'owner/repo';
     process.env.CODECOV_TOKEN = 'ASDF-ASDF-ASDF-ASDF';
@@ -14,15 +15,15 @@ describe("getConfiguration", function(){
       process.env.TRAVIS_PULL_REQUEST = 'false';
     }
     expect(getConfiguration()).to.eql({
-      service : 'travis-org',
       package : 'node',
+      service : 'travis',
       commit : '5678',
       build : '91011',
       branch : 'master',
-      travis_job_id : '1234',
+      pull_request: 'false',
+      job : '1234',
       token : 'asdf-asdf-asdf-asdf',
-      owner : 'owner',
-      repo : 'repo'
+      slug : 'owner/repo'
     });
   });
   it ("can get a token passed via env variable (lowercase)", function(){
@@ -30,6 +31,7 @@ describe("getConfiguration", function(){
     process.env.TRAVIS_JOB_ID = '1234';
     process.env.TRAVIS_COMMIT = '5678';
     process.env.TRAVIS_JOB_NUMBER = '91011';
+    process.env.TRAVIS_PULL_REQUEST = 'false';
     process.env.TRAVIS_BRANCH = 'master';
     process.env.TRAVIS_REPO_SLUG = 'owner/repo';
     process.env.codecov_token = 'asdf-asdf-asdf-asdf';
@@ -37,15 +39,15 @@ describe("getConfiguration", function(){
       process.env.TRAVIS_PULL_REQUEST = 'false';
     }
     expect(getConfiguration()).to.eql({
-      service : 'travis-org',
       package : 'node',
+      service : 'travis',
       commit : '5678',
       build : '91011',
-      travis_job_id : '1234',
+      pull_request: 'false',
+      job : '1234',
       branch : 'master',
       token : 'asdf-asdf-asdf-asdf',
-      owner : 'owner',
-      repo : 'repo'
+      slug : 'owner/repo'
     });
   });
 

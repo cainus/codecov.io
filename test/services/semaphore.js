@@ -17,8 +17,7 @@ describe("semaphore service", function(){
       commit : '5678',
       build : '1234',
       branch : 'master',
-      owner : 'owner',
-      repo : 'repo'
+      slug : 'owner/repo'
     });
   });
 
