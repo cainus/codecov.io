@@ -16,31 +16,43 @@ This script ( `bin/codecov.io.js` ) can take standard input from any tool that e
 
 Once your app is instrumented for coverage, and building, you need to pipe the coverage reports output to `./node_modules/codecov.io/bin/codecov.io.js`.
 
-This library currently supports the following CI companies: [Travis CI](https://travis-ci.org/), [Appveyor](https://appveyor.com/), [CircleCI](https://circleci.com/), [Codeship](https://codeship.io/), [Drone](https://drone.io/), [Jenkins](http://jenkins-ci.org/), [Shippable](https://shippable.com/), [Semaphore](https://semaphoreapp.com/), [Wercker](https://wercker.com/)
+This library currently supports the following CI companies: [Travis CI](https://travis-ci.org/), [Appveyor](https://appveyor.com/), [CircleCI](https://circleci.com/), [Codeship](https://codeship.io/), [Drone](https://drone.io/), [Jenkins](http://jenkins-ci.org/), [Shippable](https://shippable.com/), [Semaphore](https://semaphoreapp.com/), [Wercker](https://wercker.com/).
 
+#### Upload repo tokens
+> Repo tokens are **not** required for public repos tested on Travis, CircleCI or AppVeyor.
 
-### [Istanbul](https://github.com/gotwarlost/istanbul)
+Repo tokens are neccessary to distinquish your repository from others. You can find your repo token on your repository page at Codecov. Set this unique uuid to `CODECOV_TOKEN` in your environment variables.
+
+```
+export CODECOV_TOKEN=":uuid-repo-token"
+```
+
+#### [Istanbul](https://github.com/gotwarlost/istanbul)
 
 **With Mocha:**
 
 ```sh
-istanbul cover ./node_modules/mocha/bin/_mocha -- -R spec && cat ./coverage/coverage.json | ./node_modules/.bin/codecov
+istanbul cover ./node_modules/mocha/bin/_mocha -- -R spec && cat ./coverage/lcov.info | ./node_modules/.bin/codecov
 ```
 
 **With Jasmine:**
 
 ```sh
-istanbul cover jasmine-node --captureExceptions spec/ && cat ./coverage/coverage.json | ./node_modules/.bin/codecov
+istanbul cover jasmine-node --captureExceptions spec/ && cat ./coverage/lcov.info | ./node_modules/.bin/codecov
 ```
 
 **With Tape:**
 
 ```sh
-istanbul cover test.js && cat ./coverage/coverage.json | ./node_modules/.bin/codecov
+istanbul cover test.js && cat ./coverage/lcov.info | ./node_modules/.bin/codecov
 ```
 
-[travis-image]: https://travis-ci.org/cainus/codecov.io.svg?branch=master
-[travis-url]: https://travis-ci.org/cainus/codecov.io
+----
+
+## Advanced: Partial Line Coverage
+**Codecov does support parital line coverage**. However, some node projects do not report partial coverage accurate enough.
+You can decide to upload the partial coverage report by chaning the target upload file to `./coverage/coverage.json`.
+View your report on Codecov, if the reports are not accurate then switch back to the `lcov` provided above.
 
 
 ## Contributing
@@ -48,3 +60,6 @@ istanbul cover test.js && cat ./coverage/coverage.json | ./node_modules/.bin/cod
 I generally don't accept pull requests that are untested, or break the build, because I'd like to keep the quality high (this is a coverage tool afterall!).
 
 I also don't care for "soft-versioning" or "optimistic versioning" (dependencies that have ^, x, > in them, or anything other than numbers and dots).  There have been too many problems with bad semantic versioning in dependencies, and I'd rather have a solid library than a bleeding edge one.
+
+[travis-image]: https://travis-ci.org/cainus/codecov.io.svg?branch=master
+[travis-url]: https://travis-ci.org/cainus/codecov.io
