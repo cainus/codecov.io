@@ -17,7 +17,7 @@ test-codecov.io:
 		cat ./coverage/coverage.json | ./bin/codecov.io.js --verbose
 
 deploy:
-	$(eval VERSION := $(cat package.json | grep '"version"' | cut -d\" -f4))
+	$(eval VERSION := $(shell cat package.json | grep '"version"' | cut -d\" -f4))
 	git tag v$(VERSION) -m ""
 	git push origin v$(VERSION)
 	npm publish

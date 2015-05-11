@@ -18,6 +18,9 @@ Once your app is instrumented for coverage, and building, you need to pipe the c
 
 This library currently supports the following CI companies: [Travis CI](https://travis-ci.org/), [Appveyor](https://appveyor.com/), [CircleCI](https://circleci.com/), [Codeship](https://codeship.io/), [Drone](https://drone.io/), [Jenkins](http://jenkins-ci.org/), [Shippable](https://shippable.com/), [Semaphore](https://semaphoreapp.com/), [Wercker](https://wercker.com/).
 
+### CI Companies Supported
+Jenkins, Travis CI, Codeship, Circle CI, Semaphore, drone.io, AppVeyor, Wercker, Magnum, Shippable, and Gitlab CI. Otherwise fallbacks on `git`.
+
 #### Upload repo tokens
 > Repo tokens are **not** required for public repos tested on Travis, CircleCI or AppVeyor.
 
