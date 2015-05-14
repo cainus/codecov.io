@@ -16,7 +16,7 @@ describe("circle service", function(){
     process.env.CIRCLE_PROJECT_USERNAME = 'owner';
     process.env.CIRCLE_PROJECT_REPONAME = 'repo';
     expect(circle.configuration()).to.eql({
-      service : 'circle',
+      service : 'circleci',
       commit : '5678',
       build : '1234',
       branch : 'master',
