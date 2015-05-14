@@ -1,5 +1,7 @@
 # codecov.io
 
+[![Join the chat at https://gitter.im/cainus/codecov.io](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/cainus/codecov.io?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 [![Build Status][travis-image]][travis-url] [![codecov.io](https://codecov.io/github/cainus/codecov.io/coverage.svg?branch=master)](https://codecov.io/github/cainus/codecov.io?branch=master)
 
 [Codecov.io](https://codecov.io/) support for node.js.  Get the great coverage reporting of codecov.io and add a cool coverage button ( like the one above ) to your README.
