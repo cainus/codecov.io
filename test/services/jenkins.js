@@ -12,13 +12,11 @@ describe("jenkins service", function(){
     process.env.BUILD_URL = 'http://asdf/';
     process.env.GIT_COMMIT = '5678';
     process.env.GIT_BRANCH = 'master';
-    process.env.WORKSPACE = '/var/lib/jenkins/workspace';
     expect(jenkins.configuration()).to.eql({
       service : 'jenkins',
       build_url : 'http://asdf/',
       build : '1234',
       commit : '5678',
-      root : '/var/lib/jenkins/workspace',
       pull_request : undefined,
       branch : 'master'
     });
@@ -32,13 +30,11 @@ describe("jenkins service", function(){
     process.env.GIT_BRANCH = 'master';
     process.env.ghprbSourceBranch = 'retsam';
     process.env.ghprbPullId = '1111';
-    process.env.WORKSPACE = '/var/lib/jenkins/workspace';
     expect(jenkins.configuration()).to.eql({
       service : 'jenkins',
       build_url : 'http://asdf/',
       build : '1234',
       commit : '8765',
-      root : '/var/lib/jenkins/workspace',
       pull_request : '1111',
       branch : 'retsam'
     });
