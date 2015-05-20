@@ -73,7 +73,7 @@ I also don't care for "soft-versioning" or "optimistic versioning" (dependencies
 [npm-url]: https://npmjs.org/package/codecov.io
 [npm-image]: https://img.shields.io/npm/v/codecov.io.svg
 
-[depstat-url]: https://david-dm.org/cainus/codecov.io.io
+[depstat-url]: https://david-dm.org/cainus/codecov.io
 [depstat-image]: https://img.shields.io/david/cainus/codecov.io/master.svg
 
 [devdepstat-url]: https://david-dm.org/cainus/codecov.io#info=devDependencies
