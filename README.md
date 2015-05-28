@@ -57,6 +57,7 @@ istanbul cover test.js && cat ./coverage/lcov.info | ./node_modules/.bin/codecov
 You can decide to upload the partial coverage report by chaning the target upload file to `./coverage/coverage.json`.
 View your report on Codecov, if the reports are not accurate then switch back to the `lcov` provided above.
 
+We are working on improving this implementation and appreciate your patience.
 
 ## Contributing
 
