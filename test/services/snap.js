@@ -14,7 +14,7 @@ describe("snap service", function(){
     process.env.SNAP_BRANCH = 'master';
     process.env.SNAP_PULL_REQUEST_NUMBER = 'blah';
     expect(snap.configuration()).to.eql({
-      service : 'snapci',
+      service : 'snap',
       commit : '5678',
       build : '1234',
       branch : 'master',
