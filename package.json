@@ -3,6 +3,7 @@
   "version": "0.1.7",
   "description": "lcov posting to codecov.io",
   "main": "index.js",
+  "files": ["index.js", "lib/", "bin/"],
   "scripts": {
     "test": "make test-codecov.io"
   },
