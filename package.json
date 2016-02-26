@@ -1,6 +1,6 @@
 {
   "name": "codecov.io",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "lcov posting to codecov.io",
   "main": "index.js",
   "scripts": {
@@ -26,7 +26,7 @@
   },
   "homepage": "https://github.com/cainus/codecov.io",
   "dependencies": {
-    "request": "2.42.0",
+    "request": "2.69.1",
     "urlgrey": "0.4.0"
   },
   "devDependencies": {
