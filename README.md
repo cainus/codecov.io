@@ -1,3 +1,11 @@
+-----
+
+> **Depreciating Soon**
+> Please see https://github.com/codecov/codecov-node
+> Thank you!
+
+----
+
 # codecov.io
 
 [![NPM version][npm-image]][npm-url]
